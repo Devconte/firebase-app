@@ -1,8 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
-    databaseURL: "https://realtime-database-df319-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://playground-firebase-8723e-default-rtdb.europe-west1.firebasedatabase.app/
 }
 
 const app = initializeApp(appSettings)
@@ -14,8 +14,8 @@ const addButtonEl = document.getElementById("add-button")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
-    
-    // Challenge: Use the Firebase function 'push' to push inputValue to the database
-    
+   
+    push(shoppingListInDB, inputValue)
+
     console.log(inputValue)
 })
